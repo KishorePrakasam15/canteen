@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo-docker
+  labels:
+    app: demo-docker
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: demo-docker
+  template:
+    metadata:
+      name: demo-docker
+      labels: 
+        app: demo-docker
+    spec: 
+      containers:
+        - name: demo-docker
+          image: kishoreprakasam/docker-1
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always

@@ -1,0 +1,11 @@
+apiVersion: v1 
+kind: Service
+metadata:
+  name: demo-docker-svc
+spec:
+  selector:
+    app: demo-docker
+  ports:
+    - port: 80
+      targetPort: 8081
+  type: LoadBalancer
